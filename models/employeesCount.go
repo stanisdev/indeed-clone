@@ -6,5 +6,5 @@ import (
 
 type EmployeesCount struct {
   gorm.Model
-  Value string
+  Value string `gorm:"type:varchar(50);unique;not null"`
 }

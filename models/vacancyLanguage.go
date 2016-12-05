@@ -4,8 +4,8 @@ import (
   "github.com/jinzhu/gorm"
 )
 
-type CompanyPhone struct {
+type VacancyLanguage struct {
   gorm.Model
-  CompanyID uint
-  PhoneID uint
+  VacancyID uint
+  LanguageID uint
 }

@@ -6,8 +6,8 @@ import (
 
 type Company struct {
   gorm.Model
-  Name string
-  CityID uint
-  Url string
+  Name string `gorm:"not null;unique"`
+  CityID uint `gorm:"not null"`
+  Url string `gorm:"type:varchar(100)"`
   EmployeesCountID uint
 }
