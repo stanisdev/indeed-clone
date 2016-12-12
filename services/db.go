@@ -28,13 +28,30 @@ func DbMigrate()  {
     &models.City{},
     &models.Company{},
     &models.EmployeesCount{},
+    &models.DurationJob{},
+    &models.EducationLevel{},
+    &models.Email{},
+    &models.EmployeesCount{},
+    &models.ExperienceLevel{},
+    &models.ExperienceProfession{},
+    &models.ExperienceYear{},
+    &models.Industry{},
+    &models.Language{},
+    &models.PaymentRate{},
     &models.Phone{},
-    &models.CompanyPhone{},
-    &models.User{})
+    &models.Tag{},
+    &models.User{},
+    &models.Vacancy{},
+    &models.VacancyDuration{},
+    &models.VacancyEducationLevel{},)
 
   con.Model(&models.City{}).AddForeignKey("country_id", "countries(id)", "CASCADE", "CASCADE")
   con.Model(&models.Company{}).AddForeignKey("city_id", "cities(id)", "CASCADE", "CASCADE")
   con.Model(&models.Company{}).AddForeignKey("employees_count_id", "employees_counts(id)", "CASCADE", "CASCADE")
-  con.Model(&models.CompanyPhone{}).AddForeignKey("company_id", "companies(id)", "CASCADE", "CASCADE")
-  con.Model(&models.CompanyPhone{}).AddForeignKey("phone_id", "phones(id)", "CASCADE", "CASCADE")
+  con.Model(&models.Email{}).AddForeignKey("company_id", "companies(id)", "CASCADE", "CASCADE")
+  con.Model(&models.VacancyDuration{}).AddForeignKey("vacancy_id", "vacancies(id)", "CASCADE", "CASCADE")
+  con.Model(&models.VacancyDuration{}).AddForeignKey("duration_job_id", "duration_jobs(id)", "CASCADE", "CASCADE")
+
+  con.Model(&models.VacancyEducationLevel{}).AddForeignKey("vacancy_id", "vacancies(id)", "CASCADE", "CASCADE")
+  con.Model(&models.VacancyEducationLevel{}).AddForeignKey("education_level_id", "education_levels(id)", "CASCADE", "CASCADE")
 }

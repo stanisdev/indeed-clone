@@ -5,10 +5,10 @@ import (
 )
 
 /**
- * Many to Many: Languages required for Job
+ * Vacancy model
  */
-type VacancyLanguage struct {
+type VacancyIndustry struct {
   gorm.Model
   VacancyID uint `gorm:"not null"`
-  LanguageID uint `gorm:"not null"`
+  IndustryID uint `gorm:"not null"`
 }

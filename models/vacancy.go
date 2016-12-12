@@ -5,14 +5,14 @@ import (
   "time"
 )
 
+/**
+ * Vacancy model
+ */
 type Vacancy struct {
   gorm.Model
-  Title string
+  Title string `gorm:"type:varchar(255);not null"`
   ExpiredDate time.Time
   Description string `gorm:"type:text;not null"`
-  SalarySize int
-  IndustryID uint
-  ExperienceLevelID uint
-  PaymentRateID uint
-  EducationLevelID uint
+  SalarySize int `gorm:"not null"`
+  PaymentRateID uint `gorm:"not null"`
 }

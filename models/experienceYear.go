@@ -2,10 +2,12 @@ package models
 
 import (
   "github.com/jinzhu/gorm"
-  "time"
 )
 
+/**
+ * List of numbers that reletaed to years experience
+ */
 type ExperienceYear struct {
   gorm.Model
-  Value int
+  Value int `gorm:"unique;not null"` // 1, 2, 3 ...
 }

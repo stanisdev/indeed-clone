@@ -4,9 +4,12 @@ import (
   "github.com/jinzhu/gorm"
 )
 
-type ExperienceYear struct {
+/**
+ * Many to Many (triple relationship): Vacancy + Profession + Year of Experience
+ */
+type VacancyExperience struct {
   gorm.Model
-  VacancyID uint
-  ExperienceTypeID uint
-  ExperienceYearID uint
+  VacancyID uint `gorm:"not null"`
+  ExperienceProfessionID uint `gorm:"not null"`
+  ExperienceYearID uint `gorm:"not null"`
 }
