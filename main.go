@@ -13,6 +13,10 @@ func main() {
     services.DbMigrate()
     return
   }
+  if len(os.Getenv("LOAD_FIXTURES")) > 0 {
+    services.ImportFixtures()
+    return
+  }
   router := gin.Default()
   htmlRender := services.NewRender()
   htmlRender.Debug = gin.IsDebugging()
@@ -21,6 +25,7 @@ func main() {
 
   router.Use(middlewares.DbConnect)
 
-  router.GET("/ping", handlers.MainIndex)
+  router.GET("/", handlers.MainIndex)
+  router.POST("/jobs", handlers.FindJobsPost)
   router.Run()
 }

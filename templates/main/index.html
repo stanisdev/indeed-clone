@@ -1,5 +1,21 @@
 {{ define "content" }}
-  <h1>
-    11111111122222222222
-  </h1>
+
+  <div style="height: auto; width: 400px;">
+    <form action="/jobs" method="post">
+      <img src="https://www.indeed.com/images/logo.png" alt="">
+
+      <div class="col-lg-6" style="width: 340px; margin-top: 40px;">
+        <input type="text" class="form-control" placeholder="What?">
+      </div>
+
+      <div class="col-lg-6" style="width: 340px; margin-top: 10px;">
+        <input type="text" class="form-control" placeholder="Where?">
+      </div>
+
+      <div style="margin: 20px 0 0 14px;">
+        <button type="submit" class="btn btn-lg btn-success">Find Jobs</button>
+      </div>
+    </form>
+  </div>
+
 {{ end }}

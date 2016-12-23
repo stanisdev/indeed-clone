@@ -15,6 +15,18 @@ func MainIndex(c *gin.Context) {
   // var product models.Product
   // db.First(&product, 1)
   c.HTML(http.StatusOK, "main/index", gin.H{
-    "title": "Hello there",
+    "title": "Job Search",
+  })
+}
+
+/**
+ * Find job
+ */
+func FindJobsPost(c *gin.Context) {
+  // db := c.MustGet("db").(*gorm.DB)
+  // var product models.Product
+  // db.First(&product, 1)
+  c.HTML(http.StatusOK, "main/index", gin.H{
+    "title": "Job Search",
   })
 }

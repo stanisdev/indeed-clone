@@ -15,4 +15,6 @@ type Vacancy struct {
   Description string `gorm:"type:text;not null"`
   SalarySize int `gorm:"not null"`
   PaymentRateID uint `gorm:"not null"`
+  UserID uint `gorm:"not null"`
+  CompanyID uint `gorm:"not null"`
 }
